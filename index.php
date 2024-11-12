@@ -14,6 +14,8 @@ $path = dirname(__FILE__);
 $dotenv = Dotenv::createUnsafeImmutable($path);
 $dotenv->load();
 
+error_reporting(0);
+
 // Classe principal para gerenciar as rotas e o método HTTP
 class Index{
 
