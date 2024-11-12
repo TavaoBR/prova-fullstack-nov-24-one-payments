@@ -27,21 +27,36 @@ class Routers {
 
     // Define as rotas para requisições GET
     public function get(){
+        
         $rota = $this->router; // Atribui o roteador à variável $rota
+        $rota->group(null)->namespace("Src\Controller");
+        $rota->get("/", "IndexController:index");
+        $rota->get("/login", "IndexController:login");
+
+        $rota->dispatch();
     }
 
     // Define as rotas para requisições POST
     public function post(){
         $rota = $this->router;
+
+        $rota->group("/user")->namespace("Src\Request\Post\Usuario");
+        $rota->post("/login", "Login:request");
+
+        $rota->dispatch();
     }
 
     // Define as rotas para requisições PUT
     public function put(){
         $rota = $this->router;
+
+        $rota->dispatch();
     }
 
     // Define as rotas para requisições DELETE
     public function delete(){
         $rota = $this->router;
+
+        $rota->dispatch();
     }
 }
