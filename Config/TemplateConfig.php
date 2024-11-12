@@ -22,7 +22,7 @@ abstract class TemplateConfig {
         }
 
         // Cria uma instância do motor de templates Plates, passando o diretório 'Web' como base para templates
-        $render = new Engine("Web");
+        $render = new Engine("View");
 
         // Renderiza a view com os dados fornecidos e imprime o resultado
         echo $render->render($view, $data);
