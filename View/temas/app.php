@@ -30,6 +30,12 @@
   <link href="<?=Assests("/")?>vendor/simple-datatables/style.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script src="<?=vueJS()?>"></script>
+    <script>
+        let dominio = "<?=dominio()?>";
+        let path = "<?=Assests("/")?>";
+    </script>
   <!-- Template Main CSS File -->
   <link href="<?=Assests("/")?>css/style.css" rel="stylesheet">
 
@@ -37,13 +43,13 @@
 
 <body>
 
-   <?php 
-    include_once("View/components/header.php");
-   ?>
+<div id="appheader">
+  <header-component></header-component>
+</div>
 
-   <?php 
-    include_once("View/components/sidebar.php");
-   ?>
+<div id="appSidebar"> 
+   <sidebar-component></sidebar-component>
+</div>
 
   <main id="main" class="main">
 
@@ -65,6 +71,8 @@
 
   <!-- Template Main JS File -->
   <script src="<?=Assests("/")?>js/main.js"></script>
+  <script src="<?=scriptsVueJs("components/header.js")?>"></script>
+  <script src="<?=scriptsVueJs("components/sidebar.js")?>"></script>
 
 </body>
 
