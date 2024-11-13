@@ -33,39 +33,23 @@
   <!-- Template Main CSS File -->
   <link href="<?=Assests("/")?>css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Updated: Apr 20 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="header fixed-top d-flex align-items-center">
+   <?php 
+    include_once("View/components/header.php");
+   ?>
 
-  <?=include_once("View/components/header.php")?>
-
-  </header><!-- End Header -->
-
-  <!-- ======= Sidebar ======= -->
-  <aside id="sidebar" class="sidebar">
-
-    <?=include_once("View/components/sidebar.php")?>
-
-  </aside><!-- End Sidebar-->
+   <?php 
+    include_once("View/components/sidebar.php");
+   ?>
 
   <main id="main" class="main">
 
   <?=$this->section('content')?>
 
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-<!-- End Footer -->
+  </main>
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
