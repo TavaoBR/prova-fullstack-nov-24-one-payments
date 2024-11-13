@@ -32,6 +32,7 @@ class Routers {
         $rota->group(null)->namespace("Src\Controller");
         $rota->get("/", "IndexController:index");
         $rota->get("/login", "IndexController:login");
+        $rota->get("/registro", "IndexController:registro");
 
         $rota->dispatch();
     }
@@ -42,6 +43,7 @@ class Routers {
 
         $rota->group("/user")->namespace("Src\Request\Post\Usuario");
         $rota->post("/login", "Login:request");
+        $rota->post("/registro", "Registro:request");
 
         $rota->dispatch();
     }

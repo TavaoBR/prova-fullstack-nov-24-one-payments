@@ -20,7 +20,6 @@ class Usuario extends Model{
            "senha" => $this->senha, 
            "viewSenha" => $this->viewSenha,
            "avatar" => $this->avatar,
-           "token" => $this->token,
            "tentativas" => $this->tentativas
         ]);
 
