@@ -2,8 +2,8 @@
 
 function validateUser(){
     if(!getSession("id") && !getSession("token")){
-     setSession("Mensagem", sweetAlertError("Acesso Restrito"));
-     redirect(dominio()."/app/login");
+     setSession("AcessoRestrito", sweetAlertError("Acesso Restrito"));
+     redirect(dominio()."/login");
      exit();
     }
 }
