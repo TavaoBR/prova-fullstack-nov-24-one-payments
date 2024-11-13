@@ -53,7 +53,7 @@ class Login {
         $this->usuario->token = $dados->token;
 
         switch(true){
-           case $this->usuario->tentativas = 10:
+           case $this->usuario->tentativas == 10:
               $this->sendMessageJson(false, "Login Bloqueado", "error", "Login");
            break;
 
