@@ -17,6 +17,7 @@ new Vue({
         };
     },
     methods: {
+        // Validação da senha
         validaSenha() {
             const senha = this.senha;
             this.senhaValidacoes.minimoChar = senha.length >= 8;
@@ -25,6 +26,8 @@ new Vue({
             this.senhaValidacoes.minuscula = /[a-z]/.test(senha);
             this.senhaValidacoes.simbolo = /[@!&?]/.test(senha);
         },
+
+        // Função para pré-visualizar a imagem do avatar
         previewImage(event) {
             const file = event.target.files[0];
             this.avatar = file; // Armazena o arquivo no data para envio posterior
@@ -36,6 +39,8 @@ new Vue({
                 reader.readAsDataURL(file);
             }
         },
+
+        // Função para enviar o formulário
         async handleSubmit() {
             // Prepara os dados para envio ao back-end
             const formData = new FormData();
@@ -55,7 +60,7 @@ new Vue({
         
                 // Verifica o tipo de conteúdo da resposta
                 const contentType = response.headers.get("Content-Type");
-                console.log("Content-Type:", contentType); // Verificar o tipo da resposta
+                console.log("Content-Type:", contentType); // Log do tipo da resposta
         
                 if (!response.ok) {
                     throw new Error(`Erro HTTP: ${response.status} - ${response.statusText}`);
@@ -96,6 +101,5 @@ new Vue({
                 });
             }
         }
-        
     }
 });
