@@ -34,6 +34,9 @@ class Routers {
         $rota->get("/login", "IndexController:login");
         $rota->get("/registro", "IndexController:registro");
 
+        $rota->group("app")->namespace("Src\Controller\App");
+        $rota->get("/", "AppController:index"); 
+
         $rota->dispatch();
     }
 
