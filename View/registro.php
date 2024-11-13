@@ -29,11 +29,11 @@
                                <div class="col-md-12">
                                    <label class="form-label">Regras da Senha</label>
                                    <ul style="list-style:none;">
-                                       <li><i :class="senhaValidacoes.minimoChar ? 'fa-check text-success' : 'fa-xmark text-danger'"></i> Precisa conter no minimo 8 caracteres</li>
-                                       <li><i :class="senhaValidacoes.numero ? 'fa-check text-success' : 'fa-xmark text-danger'"></i> Precisa conter número de 1 até 9</li>
-                                       <li><i :class="senhaValidacoes.maiuscula ? 'fa-check text-success' : 'fa-xmark text-danger'"></i> Precisa conter uma letra Maiúscula (A ... Z)</li>
-                                       <li><i :class="senhaValidacoes.minuscula ? 'fa-check text-success' : 'fa-xmark text-danger'"></i> Precisa conter letras Minúsculas (a ... z)</li>
-                                       <li><i :class="senhaValidacoes.simbolo ? 'fa-check text-success' : 'fa-xmark text-danger'"></i> Precisa conter caracter especial (@ ou ! ou & ou ?)</li>
+                                       <li><i :class="senhaValidacoes.minimoChar ? 'fa-solid fa-circle-check text-success' : 'fa-solid fa-circle-xmark text-danger'"></i> Precisa conter no minimo 8 caracteres</li>
+                                       <li><i :class="senhaValidacoes.numero ? 'fa-solid fa-circle-check text-success' : 'fa-solid fa-circle-xmark text-danger'"></i> Precisa conter número de 1 até 9</li>
+                                       <li><i :class="senhaValidacoes.maiuscula ? 'fa-solid fa-circle-check text-success' : 'fa-solid fa-circle-xmark text-danger'"></i> Precisa conter uma letra Maiúscula (A ... Z)</li>
+                                       <li><i :class="senhaValidacoes.minuscula ? 'fa-solid fa-circle-check text-success' : 'fa-solid fa-circle-xmark text-danger'"></i> Precisa conter letras Minúsculas (a ... z)</li>
+                                       <li><i :class="senhaValidacoes.simbolo ? 'fa-solid fa-circle-check text-success' : 'fa-solid fa-circle-xmark text-danger'"></i> Precisa conter caracter especial (@ ou ! ou & ou ?)</li>
                                    </ul>
                                </div>
                            </div>
