@@ -11,6 +11,7 @@ class IndexController extends TemplateConfig{
     }
 
     public function login(){
+        session_start();
         $this->view("login", ["title" => "Login"]);
     }
 
