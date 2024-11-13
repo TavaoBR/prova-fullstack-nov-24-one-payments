@@ -1,6 +1,8 @@
 <?=$this->layout("temas/loginCadastro", ['title' => $title])?>
 
 <link href="<?=Assests("/")?>css/login.css" rel="stylesheet">
+
+<?=validateSession("AcessoRestrito")?>
     
 <div id="app" class="container d-flex justify-content-center align-items-center min-vh-100">
         <div class="row border rounded-5 p-3 bg-white shadow box-area">

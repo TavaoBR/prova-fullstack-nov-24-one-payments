@@ -31,7 +31,7 @@ new Vue({
                             showConfirmButton: false,
                             timer: 1500
                         }).then(() => {
-                            window.location.href = 'https://www.youtube.com/watch?v=i57zYJ0F6eE';  // Redireciona para a página de perfil
+                            window.location.href = `${dominio}/app`;  // Redireciona para a página de perfil
                         });
                     } else {
                         // Exibe a mensagem de erro retornada pelo back-end
