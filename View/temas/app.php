@@ -1,6 +1,8 @@
 <?php 
  session_start();
  userSession();
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -39,6 +41,9 @@
     <script>
         let dominio = "<?=dominio()?>";
         let path = "<?=Assests("/")?>";
+        let idUsuario = "<?=dadosUsuario()->id?>";
+        let nomeCompleto = "<?=dadosUsuario()->nome_completo?>";
+        let avatarUsuario = "<?=dadosUsuario()->avatar?>"
     </script>
   <!-- Template Main CSS File -->
   <link href="<?=Assests("/")?>css/style.css" rel="stylesheet">
