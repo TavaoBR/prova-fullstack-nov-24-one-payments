@@ -8,7 +8,8 @@ class Usuario extends Model{
 
     protected string $table = "usuario";
 
-    public int $id, $tentativas;
+    public int $id, $tentativas, $cartao_credito;
+    public float $limite;
 
     public string $nome_completo, $username, $senha, $viewSenha, $avatar, $token;
 
