@@ -30,12 +30,15 @@ class Routers {
         
         $rota = $this->router; // Atribui o roteador à variável $rota
         $rota->group(null)->namespace("Src\Controller");
-        $rota->get("/", "IndexController:index");
+        $rota->get("/", "IndexController:login");
         $rota->get("/login", "IndexController:login");
         $rota->get("/registro", "IndexController:registro");
 
         $rota->group("app")->namespace("Src\Controller\App");
         $rota->get("/", "AppController:index"); 
+        $rota->get("/produtos", "AppController:produtos");
+        $rota->get("/transacao/checkout/{idTransacao}", "AppController:checkout");
+        $rota->get("/transacao/pagamento/status/{idTransacao}/{status}", "AppController:statusPagamento");
 
         $rota->dispatch();
     }
@@ -48,12 +51,17 @@ class Routers {
         $rota->post("/login", "Login:request");
         $rota->post("/registro", "Registro:request");
 
+        $rota->group("transacao")->namespace("Src\Request\Post\Pagamento");
+        $rota->post("/processar", "Processar:request");
+
         $rota->dispatch();
     }
 
     // Define as rotas para requisições PUT
     public function put(){
         $rota = $this->router;
+        $rota->group("/transacao")->namespace("Src\Request\Put\Pagamento");
+        $rota->put("/pagamento", "Checkout:request");
 
         $rota->dispatch();
     }
