@@ -80,6 +80,8 @@ new Vue({
                             icon: 'success',
                             title: 'Sucesso',
                             text: 'Cadastro realizado com sucesso!'
+                        }).the(() => {
+                            window.location.href = `${dominio}/login`;
                         });
                     } else {
                         Swal.fire({

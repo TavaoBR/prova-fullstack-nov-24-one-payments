@@ -3,8 +3,7 @@ Vue.component('sidebar-component', {
       return {
         sidebarItems: [
           { icon: 'bi bi-person', title: 'Perfil', link: 'users-profile.html' },
-          { icon: 'bx bxs-credit-card', title: 'Cartão de Crédito', link: 'pages-faq.html' },
-          { icon: 'bx bxl-product-hunt', title: 'Produtos', link: 'pages-contact.html' },
+          { icon: 'bx bxl-product-hunt', title: 'Produtos', link: `${dominio}/app/produtos` },
           { icon: 'bx bx-money-withdraw', title: 'Transações', link: 'pages-contact.html' },
           { icon: 'bx bx-exit', title: 'Sair', link: 'pages-contact.html' }
         ]
