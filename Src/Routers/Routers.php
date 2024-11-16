@@ -40,8 +40,16 @@ class Routers {
         $rota->get("/transacao/checkout/{idTransacao}", "AppController:checkout");
         $rota->get("/transacao/pagamento/status/{idTransacao}/{status}", "AppController:statusPagamento");
         $rota->get("/transacoes", "AppController:transacoes");
+
+        $rota->group("oops")->namespace("Src\Controller\Error");
+        $rota->get("/{errocode}", "ErrorController:notFound");
         
         $rota->dispatch();
+        
+        if($rota->error()){
+            $rota->redirect("/oops/{$rota->error()}");
+        } 
+
     }
 
     // Define as rotas para requisições POST
@@ -55,6 +63,16 @@ class Routers {
         $rota->group("transacao")->namespace("Src\Request\Post\Pagamento");
         $rota->post("/processar", "Processar:request");
 
+
+        $rota->group("oops")->namespace("Src\Controller\Error");
+        $rota->get("/{errocode}", "ErrorController:notFound");
+        
+        $rota->dispatch();
+        
+        if($rota->error()){
+            $rota->redirect("/oops/{$rota->error()}");
+        } 
+
         $rota->dispatch();
     }
 
@@ -64,12 +82,32 @@ class Routers {
         $rota->group("/transacao")->namespace("Src\Request\Put\Pagamento");
         $rota->put("/pagamento", "Checkout:request");
 
+
+        $rota->group("oops")->namespace("Src\Controller\Error");
+        $rota->get("/{errocode}", "ErrorController:notFound");
+        
+        $rota->dispatch();
+        
+        if($rota->error()){
+            $rota->redirect("/oops/{$rota->error()}");
+        } 
+
         $rota->dispatch();
     }
 
     // Define as rotas para requisições DELETE
     public function delete(){
         $rota = $this->router;
+
+
+        $rota->group("oops")->namespace("Src\Controller\Error");
+        $rota->get("/{errocode}", "ErrorController:notFound");
+        
+        $rota->dispatch();
+        
+        if($rota->error()){
+            $rota->redirect("/oops/{$rota->error()}");
+        } 
 
         $rota->dispatch();
     }
