@@ -52,4 +52,13 @@ class AppController extends TemplateConfig{
 
         $this->view("app/transacao/payments/status", ["title" => $status, "dados" => $select[1], "conta" => $select[0]]);
     }
+
+
+    public function transacoes(){
+        session_start();
+        $id =  getSession("id");
+        $this->transacao->fk = $id;
+        $select = $this->transacao->byFK();
+        $this->view("app/transacao/transacoes", ["title" => "Transações", "dados" => $select[1]]);
+    }
 }

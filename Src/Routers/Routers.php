@@ -39,7 +39,8 @@ class Routers {
         $rota->get("/produtos", "AppController:produtos");
         $rota->get("/transacao/checkout/{idTransacao}", "AppController:checkout");
         $rota->get("/transacao/pagamento/status/{idTransacao}/{status}", "AppController:statusPagamento");
-
+        $rota->get("/transacoes", "AppController:transacoes");
+        
         $rota->dispatch();
     }
 
