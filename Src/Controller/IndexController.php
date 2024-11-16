@@ -15,4 +15,13 @@ class IndexController extends TemplateConfig{
         $this->view("registro", ["title" => "Registro"]);
     }
 
+    public function sair(){
+      session_destroy();
+      session_start();
+      unsetSession("id");
+      unsetSession("token");
+      setSession("AcessoRestrito",sweetAlertSuccess("Deslogado com sucesso"));
+      redirect(dominio()."/login");
+    }
+
 }

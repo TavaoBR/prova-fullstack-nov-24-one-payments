@@ -4,7 +4,7 @@ Vue.component('sidebar-component', {
         sidebarItems: [
           { icon: 'bx bxl-product-hunt', title: 'Produtos', link: `${dominio}/app/produtos` },
           { icon: 'bx bx-money-withdraw', title: 'Transações', link: `${dominio}/app/transacoes` },
-          { icon: 'bx bx-exit', title: 'Sair', link: 'pages-contact.html' }
+          { icon: 'bx bx-exit', title: 'Sair', link: `${dominio}/sair` }
         ]
       };
     },
